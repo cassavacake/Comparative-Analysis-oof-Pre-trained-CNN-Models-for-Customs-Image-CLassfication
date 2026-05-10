@@ -4,7 +4,7 @@
 
 ##  A. Model Evaluation Analysis
 
-##1.  What were the weakest-performing classes based on the confusion matrix?
+# 1.  What were the weakest-performing classes based on the confusion matrix?
 The weakest-performing classes were the ones with the lowest F1-scores because they had the poorest balance between precision and recall. Based on the classification report, these were:
 
 Class	Precision	Recall	F1-Score
@@ -16,7 +16,7 @@ Sickle Fern	0.69	0.65	0.67
 These classes likely had more misclassifications in the confusion matrix because the model struggled to correctly distinguish them from other fern species.
 
 
-##2. How did Precision, Recall, and F1-score vary across classes?
+# 2. How did Precision, Recall, and F1-score vary across classes?
 
 The model performance varied significantly across the different fern classes:
 
@@ -37,7 +37,7 @@ F1-score ranged from 0.67 to 0.93
 This variation indicates that some fern species were easier for the model to classify than others.
 
 
-##3. What does a low recall indicate in the model?
+# 3. What does a low recall indicate in the model?
 
 A low recall means that the model failed to correctly identify many actual instances of a class.
 
@@ -60,8 +60,7 @@ The model struggles to detect that class consistently
 
 For example, if a fern class has recall = 0.65, it means only 65% of the actual samples were correctly identified, while 35% were incorrectly classified as other classes.
 
-
-##4. How does AUC score reflect model performance compared to accuracy?
+# 4. How does AUC score reflect model performance compared to accuracy?
 
 The AUC (Area Under the ROC Curve) measures how well the model separates classes across different classification thresholds, while accuracy only measures the percentage of correct predictions.
 
@@ -89,13 +88,12 @@ Therefore, AUC provides a deeper evaluation of classification performance than a
 
 ## B. Model Improvement
 
-
-##5. How did data augmentation affect validation accuracy?
+# 5. How did data augmentation affect validation accuracy?
 
 Data augmentation improved the model’s validation accuracy by increasing the diversity of training images without collecting new data. Techniques such as rotation, flipping, zooming, shifting, and brightness adjustments helped the CNN learn more generalized features of the fern species. As a resul the model became less sensitive to image orientation, lighting, and scale variations. Validation accuracy improved because the model could better recognize unseen images. Overfitting was reduced since the network did not memorize only the original training samples.
 
 
-##6. Why is Batch Normalization important in CNNs?
+# 6. Why is Batch Normalization important in CNNs?
 
 In this custom CNN, Batch Normalization was added after each convolutional layer. This:
 
@@ -104,14 +102,14 @@ Allowed the deeper CNN architecture to learn better plant features
 Reduced training instability
 Supported better overall validation performance
 
-##7. What role did Dropout play in improving the model?
+# 7. What role did Dropout play in improving the model?
 
  The high dropout values from the original guide (0.4 and 0.5) caused severe underfitting. The improved model used graduated, lighter values:
 
 Dropout layers used: 0.05 → 0.10 → 0.15 → 0.20 → 0.30
 This was better than using very high dropout values, which previously made the model underfit. The adjusted dropout values helped balance learning and regularization effectively.
 
-##8. How did Early Stopping prevent overfitting?
+# 8. How did Early Stopping prevent overfitting?
 EarlyStopping monitors the validation loss during training. When the validation loss stops improving for a set number of epochs, training automatically stops and the best model weights are restored.
 
 early_stop = EarlyStopping(
@@ -125,7 +123,8 @@ This prevented the model from continuing to train after validation loss stopped 
 The final model used the best validation performance instead of the last training epoch
 
 ##C. Performance Comparison
-##9. What improvements were observed after modifying the model?
+
+# 9. What improvements were observed after modifying the model?
 After modifying the custom CNN, all major metrics improved significantly:
 
 Metric	Baseline Model	Improved Custom CNN	Difference
@@ -139,7 +138,7 @@ Macro F1-Score	0.5103	0.7738	+0.2635
 AUC Score	0.9223	0.9771	+0.0548
 The improved model exceeded the Teachable Machine / previous baseline AUC score of 0.8963, achieving a final AUC score of 0.9771.
 
-##10. Which enhancement contributed the most to performance improvement? Why?
+# 10. Which enhancement contributed the most to performance improvement? Why?
 The biggest improvement came from the deeper custom CNN architecture combined with Batch Normalization and learning rate scheduling:
 
 Deeper architecture — allowed the model to learn more complex plant features
@@ -147,7 +146,7 @@ Batch Normalization — stabilized training and prevented gradient instability
 ReduceLROnPlateau — lowered the learning rate when validation loss plateaued, helping the model continue improving in later stages
 Data augmentation, class weights, Dropout, and EarlyStopping all contributed supporting roles, but the deeper CNN architecture and better training control were the primary reasons for the significant performance gain.
 
-##11. Did the gap between training and validation accuracy decrease? Explain.
+# 11. Did the gap between training and validation accuracy decrease? Explain.
 The gap did not decrease — it slightly increased.
 
 Baseline Model	Improved Model
