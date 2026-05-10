@@ -3,6 +3,7 @@
 ##Google Collab Link: https://colab.research.google.com/drive/1viw3urLbhPcytO2EXFlHM562XI4h8qUX
 
 ##  A. Model Evaluation Analysis
+
 ##1.  What were the weakest-performing classes based on the confusion matrix?
 The weakest-performing classes were the ones with the lowest F1-scores because they had the poorest balance between precision and recall. Based on the classification report, these were:
 
@@ -13,6 +14,7 @@ Pacific Maidenhair Fern	0.73	0.65	0.69
 Sickle Fern	0.69	0.65	0.67
 
 These classes likely had more misclassifications in the confusion matrix because the model struggled to correctly distinguish them from other fern species.
+
 
 ##2. How did Precision, Recall, and F1-score vary across classes?
 
@@ -33,6 +35,7 @@ Recall ranged from 0.65 to 0.94
 F1-score ranged from 0.67 to 0.93
 
 This variation indicates that some fern species were easier for the model to classify than others.
+
 
 ##3. What does a low recall indicate in the model?
 
@@ -56,6 +59,7 @@ Many real samples of that class are being missed
 The model struggles to detect that class consistently
 
 For example, if a fern class has recall = 0.65, it means only 65% of the actual samples were correctly identified, while 35% were incorrectly classified as other classes.
+
 
 ##4. How does AUC score reflect model performance compared to accuracy?
 
@@ -84,6 +88,8 @@ A model may have high accuracy but poor AUC if it predicts dominant classes well
 Therefore, AUC provides a deeper evaluation of classification performance than accuracy alone.
 
 ## B. Model Improvement
+
+
 ##5. How did data augmentation affect validation accuracy?
 
 Data augmentation improved the model’s validation accuracy by increasing the diversity of training images without collecting new data. Techniques such as rotation, flipping, zooming, shifting, and brightness adjustments helped the CNN learn more generalized features of the fern species. As a resul the model became less sensitive to image orientation, lighting, and scale variations. Validation accuracy improved because the model could better recognize unseen images. Overfitting was reduced since the network did not memorize only the original training samples.
