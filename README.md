@@ -43,16 +43,14 @@ Detail	Value
 | EfficientNetB0 | 0.0503 | 2.9994 | 0.035 | 3.0002 | 0.0012 | 0.035 | 0.0024 | 0.4828 |
 | NASNetMobile | 0.2988 | 2.3653 | 0.424 | 2.2078 | 0.2726 | 0.248 | 0.2468 | 0.8005 |
 # 📉 Training Summary
-Model	Train Accuracy	Train Loss	Test Accuracy	Test Loss
-ResNet50	0.7732	0.8009	0.8018	0.7352
-EfficientNetB0	0.7115	1.0334	0.7743	0.8875
-MobileNetV2	0.6863	1.0592	0.7504	0.9571
-
+ MobileNetV2   0.708  1.03  0.738  0.9931  0.7461  0.738  0.7371  0.9713 
+ EfficientNetB0  0.0503  2.9994  0.035  3.0002  0.0012  0.035  0.0024  0.4828 
+ NASNetMobile  0.2988  2.3653  0.424  2.2078  0.2726  0.248  0.2468  0.8005 
 # 📋 Full Part 12 Comparison Table
 Model	Train Acc	Train Loss	Test Acc	Test Loss	Precision	Recall	F1-Score	AUC
-Pre-trained Model 1 (ResNet50)	0.7732	0.8009	0.8018	0.7352	0.7988	0.7946	0.7938	0.9837
-Pre-trained Model 2 (EfficientNetB0)	0.7115	1.0334	0.7743	0.8875	0.7800	0.7673	0.7710	0.9787
-Pre-trained Model 3 (MobileNetV2)	0.6863	1.0592	0.7504	0.9571	0.7461	0.7444	0.7416	0.9729
+Pre-trained (Model 1) MobileNetV2   0.708  1.03  0.738  0.9931  0.7461  0.738  0.7371  0.9713 
+Pre-trained (Model 2) EfficientNetB0  0.0503  2.9994  0.035  3.0002  0.0012  0.035  0.0024  0.4828 
+Pre-trained (Model 3) NASNetMobile  0.2988  2.3653  0.424  2.2078  0.2726  0.248  0.2468  0.8005 
 Model from Teachable Machine	0.6365	1.2125	0.5265	1.5330	0.5263	0.5141	0.5103	0.8963
 1st Model	0.9996	0.0057	0.5929	2.9057	0.5904	0.5859	0.5826	0.9230
 2nd Model Enhancement	0.6374	1.1523	0.5363	1.5020	0.5469	0.5309	0.5213	0.9274
