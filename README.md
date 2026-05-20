@@ -36,11 +36,12 @@ Detail	Value
 
 # 📊 Results and Outputs
 🏆 Model Performance Summary
-Model	Test Accuracy	Macro Precision	Macro Recall	Macro F1-Score	Overall AUC
-🥇 ResNet50	0.8150	0.8128	0.8116	0.8112	0.9841
-🥈 EfficientNetB0	0.7752	0.7795	0.7703	0.7724	0.9783
-🥉 MobileNetV2	0.7345	0.7352	0.7323	0.7319	0.9739
 
+| Model | Train Accuracy | Train Loss | Test Accuracy | Test Loss | Precision | Recall | F1-score | AUC |
+|---|---|---|---|---|---|---|---|---|
+| MobileNetV2 | 0.708 | 1.03 | 0.738 | 0.9931 | 0.7461 | 0.738 | 0.7371 | 0.9713 |
+| EfficientNetB0 | 0.0503 | 2.9994 | 0.035 | 3.0002 | 0.0012 | 0.035 | 0.0024 | 0.4828 |
+| NASNetMobile | 0.2988 | 2.3653 | 0.424 | 2.2078 | 0.2726 | 0.248 | 0.2468 | 0.8005 |
 # 📉 Training Summary
 Model	Train Accuracy	Train Loss	Test Accuracy	Test Loss
 ResNet50	0.7732	0.8009	0.8018	0.7352
